@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Data>
+  <Lin>
+    <a>5</a>
+    <c>3</c>
+  </Lin>
+  <Bran>
+    <x>2</x>
+    <b>1</b>
+    <c>5</c>
+    <k>3</k>
+  </Bran>
+  <Cycl>
+    <a>2</a>
+    <a>4</a>
+    <a>1</a>
+    <a>2</a>
+    <a>5</a>
+    <a>2</a>
+  </Cycl>
+</Data>

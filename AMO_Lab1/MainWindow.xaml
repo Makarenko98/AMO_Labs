@@ -1,0 +1,19 @@
+﻿<Window x:Class="AMO_Lab1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lab1" Height="264.917" Width="379.973" Closed="ExitApplication">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <!--<MenuItem Header="Відкрити" Click=""></MenuItem>
+                <Separator/>-->
+                <MenuItem Header="Вихід" Click="ExitApplication"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Алгоритми">
+                <MenuItem Header="Лінійний" Click="LinClick"></MenuItem>
+                <MenuItem Header="Що розгалужується" Click="RamClick"></MenuItem>
+                <MenuItem Header="Циклічний" Click="CyclClick"></MenuItem>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
