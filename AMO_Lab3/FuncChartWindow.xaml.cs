@@ -38,7 +38,7 @@ namespace AMO_Lab3
             if (B < A)
                 MessageBox.Show("Icnorrect data");
             int n = 50;
-            int m = 1;
+            int m = 10;
             double h = (B - A) / (n - 1),
                 h1 = (B - A) / (m - 1);
             double[] X = new double[n],
@@ -62,7 +62,7 @@ namespace AMO_Lab3
                 new LineSeries
                 {
                     Title = "Функція",
-                    Values = new ChartValues<double>(Y)
+                    Values = new ChartValues<double>(Y),
                 },
                 new LineSeries
                 {
