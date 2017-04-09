@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         Title="FuncChartWindow" Width="1000" Height="450" Loaded="Window_Loaded">
     <Grid>
-        <lvc:CartesianChart Name="FuncChart" Series="{Binding FuncSeriesCollection}" LegendLocation="Top">
+        <lvc:CartesianChart Name="FuncChart" Series="{Binding FuncSeriesCollection}" LegendLocation="Top" Margin="0,30,0,0">
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Name="FuncYAxis" Title="Y" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+                <lvc:Axis Title="Y" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis LabelsRotation="45" Title="X" Labels="{Binding Labels}">
@@ -20,5 +20,7 @@
                 </lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
+        <CheckBox Name="ChartFuncCB" Checked="ChartFuncCB_Checked" Unchecked="ChartFuncCB_Unchecked" Content="Графік функції" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="ChartInterpolatedFuncCB" Checked="ChartInterpolatedFuncCB_Checked" Unchecked="ChartInterpolatedFuncCB_Unchecked" Content="Графік інтерпольованої функції" HorizontalAlignment="Left" Margin="125,10,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
