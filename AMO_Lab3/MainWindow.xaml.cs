@@ -43,8 +43,8 @@ namespace AMO_Lab3
                 return;
             }
             funcChartsWindow = new FuncChartWindow();
-            funcChartsWindow.A = -5;
-            funcChartsWindow.B = 5;
+            funcChartsWindow.A = 0;
+            funcChartsWindow.B = 2;
             funcChartsWindow.Show();
         }
 

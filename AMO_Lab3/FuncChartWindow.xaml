@@ -6,24 +6,11 @@
         xmlns:local="clr-namespace:AMO_Lab3"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="FuncChartWindow" Width="1000" Height="450" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged">
+        Title="FuncChartWindow" Width="1000" Height="450" Loaded="Window_Loaded">
     <Grid>
-        <lvc:CartesianChart Name="FuncChart" Series="{Binding FuncSeriesCollection}" LegendLocation="Top" Margin="0,0,505,0">
+        <lvc:CartesianChart Name="FuncChart" Series="{Binding FuncSeriesCollection}" LegendLocation="Top">
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Name="FuncYAxis" Title="Y" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
-            </lvc:CartesianChart.AxisY>
-            <lvc:CartesianChart.AxisX>
-                <lvc:Axis LabelsRotation="45" Title="X" Labels="{Binding Labels}">
-                    <lvc:Axis.Separator >
-                        <lvc:Separator Step="2"></lvc:Separator>
-                    </lvc:Axis.Separator>
-                </lvc:Axis>
-            </lvc:CartesianChart.AxisX>
-        </lvc:CartesianChart>
-
-        <lvc:CartesianChart Name="InterpolatedFuncChart" Series="{Binding InterpolatedFuncSeriesCollection}" LegendLocation="Top" Margin="495,0,0,0">
-            <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Y" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis LabelsRotation="45" Title="X" Labels="{Binding Labels}">
