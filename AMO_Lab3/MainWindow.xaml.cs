@@ -8,10 +8,12 @@ namespace AMO_Lab3
     /// </summary>
     public partial class MainWindow : Window
     {
+        FuncChartWindow funcChartsWindow;
+
         public MainWindow()
         {
             InitializeComponent();
-            Test();
+            //Test();
         }
 
         public void Test()
@@ -25,7 +27,30 @@ namespace AMO_Lab3
                 X[i] = a + d * i;
                 Y[i] = Math.Sin(X[i]);
             }
-            MessageBox.Show(MyAlgorithm.LagrangeEvenly(1, X, Y).ToString());
+            MessageBox.Show(MyAlgorithm.Lagrange(1, X, Y).ToString());
+        }
+
+        private void ExitMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void FuncCahrtsMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (funcChartsWindow != null && funcChartsWindow.IsLoaded)
+            {
+                funcChartsWindow.Activate();
+                return;
+            }
+            funcChartsWindow = new FuncChartWindow();
+            funcChartsWindow.A = -5;
+            funcChartsWindow.B = 5;
+            funcChartsWindow.Show();
+        }
+
+        private void AccuracyCharMenu_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
