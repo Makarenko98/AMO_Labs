@@ -1,4 +1,4 @@
-﻿<Window x:Class="AMO_Lab3.FuncChartWindow"
+﻿<Window x:Class="AMO_Lab3.AccuracyChartWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:AMO_Lab3"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="Графіки функції" Width="1000" Height="450" Loaded="Window_Loaded">
+        Title="Графіки похибки" Height="400" Width="500" Loaded="Window_Loaded">
     <Grid>
-        <lvc:CartesianChart Name="FuncChart" Series="{Binding FuncSeriesCollection}" LegendLocation="Top" Margin="0,30,0,0">
+        <lvc:CartesianChart Name="FuncChart" Series="{Binding AccSeriesCollection}" LegendLocation="Top" Margin="0,30,0,0">
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Y" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
@@ -20,7 +20,5 @@
                 </lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
-        <CheckBox Name="ChartFuncCB" Checked="ChartFuncCB_Checked" Unchecked="ChartFuncCB_Unchecked" Content="Графік функції" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="ChartInterpolatedFuncCB" Checked="ChartInterpolatedFuncCB_Checked" Unchecked="ChartInterpolatedFuncCB_Unchecked" Content="Графік інтерпольованої функції" HorizontalAlignment="Left" Margin="125,10,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
