@@ -3,6 +3,8 @@ using System.Windows;
 
 namespace AMO_Lab3
 {
+    //TODO: Refact MyAlgorithm.cs
+    //TODO: add mTB
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -23,6 +25,7 @@ namespace AMO_Lab3
             aTB.Text = "0";
             bTB.Text = "2";
             nTB.Text = "10";
+            mTB.Text = "50";
         }
 
         private void ExitMenu_Click(object sender, RoutedEventArgs e)
@@ -96,9 +99,9 @@ namespace AMO_Lab3
             double A = 0;
             double B = 2;
             int N = 10;
-            int M = 50;
+            int M = N*5;
 
-            if (!Double.TryParse(aTB.Text, out A) || !Double.TryParse(bTB.Text, out B) || !Int32.TryParse(nTB.Text, out N) || A > B || N < 1)
+            if (!Double.TryParse(aTB.Text, out A) || !Double.TryParse(bTB.Text, out B) || !Int32.TryParse(nTB.Text, out N) || !Int32.TryParse(mTB.Text, out M) || A > B || N < 1 || M<1)
             {
                 MessageBox.Show("Некоректні дані");
                 return;

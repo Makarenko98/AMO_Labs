@@ -13,46 +13,17 @@ namespace AMO_Lab3
         public static double Lagrange(double x, double[] X, double[] Y)
         {
             int n = X.Length;
-            double r = 0, ra, rb;
+            double result = 0, tempa, tempb;
             for (int i = 0; i < n; i++)
             {
-                ra = rb = 1;
+                tempa = tempb = 1;
                 for (int j = 0; j < n; j++)
                     if (i != j)
                     {
-                        ra *= x - X[j];    //(x_[i],y_[i]) - інтерполяційні вузли
-                        rb *= X[i] - X[j];
+                        tempa *= x - X[j];    //(x_[i],y_[i]) - інтерполяційні вузли
+                        tempb *= X[i] - X[j];
                     }
-                r += ra * Y[i] / rb;
-            }
-            return r;
-        }
-
-        public static double Lagrange_(double x, double x0, double[] Y, double h)
-        {
-            int n = Y.Length;
-            double result = 0,
-                temp = 1,
-                m = (x - x0) / h;
-            for (int i = 0; i < n; i++)
-            {
-                temp = 1;
-                for (int j = 0; j < n; j++)
-                    if (i != j)
-                        temp *= m - j;
-                result += Math.Pow(-1, n - i) * temp / FactorialInteger(i) / FactorialInteger(n - i);
-
-            }
-
-            return result;
-        }
-
-        private static int FactorialInteger(int a)
-        {
-            int result = 1;
-            for (int i = 1; i <= a; i++)
-            {
-                result *= i;
+                result += tempa * Y[i] / tempb;
             }
             return result;
         }
