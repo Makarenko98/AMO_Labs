@@ -59,6 +59,18 @@ namespace AMO_Lab3
             ChartInterpolatedFuncCB.IsChecked = true;
             DataContext = this;
         }
+
+        public void UpdateValues(double[] X, double[] Y, double[] interpolatedY, double[] arrX, double[] arrY)
+        {
+            this.X = X;
+            this.Y = Y;
+            this.interpolatedY = interpolatedY;
+            this.arrX = arrX;
+            this.arrY = arrY;
+            DataContext = null;
+            ShowCharts();
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ShowCharts();

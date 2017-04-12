@@ -59,6 +59,15 @@ namespace AMO_Lab3
             DataContext = this;
         }
 
+        public void UpdateValues(double[] X, double[] Y, double[] interpolatedY)
+        {
+            this.X = X;
+            this.Y = Y;
+            this.interpolatedY = interpolatedY;
+            DataContext = null;
+            ShowCharts();
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ShowCharts();

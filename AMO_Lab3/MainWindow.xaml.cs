@@ -25,7 +25,12 @@ namespace AMO_Lab3
             aTB.Text = "0";
             bTB.Text = "2";
             nTB.Text = "10";
-            mTB.Text = "50";
+            mTB.Text = "10";
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         private void ExitMenu_Click(object sender, RoutedEventArgs e)
@@ -84,7 +89,7 @@ namespace AMO_Lab3
                 arrX[i] = A + i * h1;
                 arrY[i] = MyAlgorithm.Func(arrX[i]);
             }
-            for(int i=0; i<N; i++)
+            for (int i = 0; i < N; i++)
                 interpolatedArrY[i] = MyAlgorithm.Lagrange(arrX[i], arrX, arrY);
             for (int i = 0; i < M; i++)
             {
@@ -99,14 +104,18 @@ namespace AMO_Lab3
             double A = 0;
             double B = 2;
             int N = 10;
-            int M = N*5;
+            int M = N ;
 
-            if (!Double.TryParse(aTB.Text, out A) || !Double.TryParse(bTB.Text, out B) || !Int32.TryParse(nTB.Text, out N) || !Int32.TryParse(mTB.Text, out M) || A > B || N < 1 || M<1)
+            if (!Double.TryParse(aTB.Text, out A) || !Double.TryParse(bTB.Text, out B) || !Int32.TryParse(nTB.Text, out N) || !Int32.TryParse(mTB.Text, out M) || A > B || N < 1 || M < 1)
             {
                 MessageBox.Show("Некоректні дані");
                 return;
             }
             GenArrs(A, B, N, M);
+            if (funcChartsWindow != null && funcChartsWindow.IsLoaded)
+                funcChartsWindow.UpdateValues(X, Y, interpolatedY, arrX, arrY);
+            if (accChartWindow != null && accChartWindow.IsLoaded)
+                accChartWindow.UpdateValues(X, Y, interpolatedY);
             ChartsMI.IsEnabled = true;
         }
     }
