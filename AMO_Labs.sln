@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMO_Lab1", "AMO_Lab1\AMO_Lab1.csproj", "{894D6816-1ACB-4E26-86A5-B37E414DA4A6}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMO_Lab2_Test", "AMO_Lab2_Test\AMO_Lab2_Test.csproj", "{FF6034CC-6EB9-4584-9C33-7CCBD3896B60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMO_Lab3", "AMO_Lab3\AMO_Lab3.csproj", "{8493E00E-0BDA-48B0-9A93-09269D9E380A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMO_Lab4", "AMO_Lab4\AMO_Lab4.csproj", "{970AFE87-93A0-4944-B16E-C85F1062B1A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMO_Lab4_Test", "AMO_Lab4_Test\AMO_Lab4_Test.csproj", "{09879BC5-616D-48A6-B1BB-2D4653ACA7BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,14 @@ Global
 		{8493E00E-0BDA-48B0-9A93-09269D9E380A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8493E00E-0BDA-48B0-9A93-09269D9E380A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8493E00E-0BDA-48B0-9A93-09269D9E380A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970AFE87-93A0-4944-B16E-C85F1062B1A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970AFE87-93A0-4944-B16E-C85F1062B1A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970AFE87-93A0-4944-B16E-C85F1062B1A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970AFE87-93A0-4944-B16E-C85F1062B1A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09879BC5-616D-48A6-B1BB-2D4653ACA7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09879BC5-616D-48A6-B1BB-2D4653ACA7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09879BC5-616D-48A6-B1BB-2D4653ACA7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09879BC5-616D-48A6-B1BB-2D4653ACA7BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +60,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7CA4401D-3EA8-4541-87E5-17CD5A40C7D0} = {408387BB-E76B-4AF3-A7DD-47AA6006BDE2}
 		{FF6034CC-6EB9-4584-9C33-7CCBD3896B60} = {408387BB-E76B-4AF3-A7DD-47AA6006BDE2}
+		{09879BC5-616D-48A6-B1BB-2D4653ACA7BC} = {408387BB-E76B-4AF3-A7DD-47AA6006BDE2}
 	EndGlobalSection
 EndGlobal

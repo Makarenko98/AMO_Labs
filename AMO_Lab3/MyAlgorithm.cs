@@ -20,7 +20,7 @@ namespace AMO_Lab3
                 for (int j = 0; j < n; j++)
                     if (i != j)
                     {
-                        tempa *= x - X[j];    //(x_[i],y_[i]) - інтерполяційні вузли
+                        tempa *= x - X[j];
                         tempb *= X[i] - X[j];
                     }
                 result += tempa * Y[i] / tempb;
