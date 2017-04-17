@@ -5,9 +5,7 @@ using Microsoft.Win32;
 using System.Collections;
 using System.Collections.Generic;
 
-//TODO: find and fix bugs
 //TODO: realize in Array and SortInfo INotifyPropertyChanged - no
-//TODO: check fileread (clear arr before read) - OK?
 
 namespace AMO_Lab2
 {

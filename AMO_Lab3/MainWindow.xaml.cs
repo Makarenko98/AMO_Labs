@@ -3,8 +3,6 @@ using System.Windows;
 
 namespace AMO_Lab3
 {
-    //TODO: Refact MyAlgorithm.cs
-    //TODO: add mTB
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>

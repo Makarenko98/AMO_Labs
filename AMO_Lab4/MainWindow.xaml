@@ -6,14 +6,15 @@
         xmlns:local="clr-namespace:AMO_Lab4"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000"
-        Loaded="Window_Loaded">
+        Title="Lab4" Height="600" Width="1000"
+        Loaded="Window_Loaded" Closed="Window_Closed">
     <Grid>
         <Menu VerticalAlignment="Top">
             <MenuItem Header="Файл">
                 <Separator></Separator>
-                <MenuItem Header="Вихід"></MenuItem>
+                <MenuItem Header="Вихід" Click="ExitMenu_Click"></MenuItem>
             </MenuItem>
+            <MenuItem Name="itersMI" Header="Проміжні результати" Click="ItersMenu_Click"></MenuItem>
         </Menu>
 
         <lvc:CartesianChart Name="FuncChart" Series="{Binding FuncSeriesCollection}" LegendLocation="Top" Margin="200,0,0,0">
@@ -28,20 +29,27 @@
                 </lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
-        <GroupBox Header="Вхідні дані" HorizontalAlignment="Left" Height="442" Margin="10,57,0,0" VerticalAlignment="Top" Width="185">
+        <GroupBox Header="Вхідні дані" HorizontalAlignment="Left" Height="180" Margin="10,57,0,0" VerticalAlignment="Top" Width="185">
             <Grid>
                 <TextBox Name="aTB" HorizontalAlignment="Left" Height="23" Margin="91,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
                 <TextBox Name="bTB" HorizontalAlignment="Left" Height="23" Margin="91,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
                 <TextBox Name="eTB"  HorizontalAlignment="Left" Height="23" Margin="91,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
                 <Label Content="Відрізок:" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top"/>
-                <Label Content="a:" HorizontalAlignment="Left" Margin="23,42,0,0" VerticalAlignment="Top"/>
-                <Label Content="b:" HorizontalAlignment="Left" Margin="23,79,0,0" VerticalAlignment="Top"/>
+                <Label Content="a:" HorizontalAlignment="Left" Margin="20,39,0,0" VerticalAlignment="Top"/>
+                <Label Content="b:" HorizontalAlignment="Left" Margin="19,76,0,0" VerticalAlignment="Top"/>
                 <Label Content="Похибка:" HorizontalAlignment="Left" Margin="19,103,0,0" VerticalAlignment="Top"/>
-                <Label Content="e:" HorizontalAlignment="Left" Margin="23,129,0,0" VerticalAlignment="Top"/>
-                <TextBox IsReadOnly="True" Name="resTB"  HorizontalAlignment="Left" Height="23" Margin="91,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
-                <Label Content="Результат:" HorizontalAlignment="Left" Margin="19,192,0,0" VerticalAlignment="Top"/>
-                <Button Content="Знайти" Click="Button_Click" HorizontalAlignment="Left" Margin="42,242,0,0" VerticalAlignment="Top" Width="75"/>
+                <Label Content="e:" HorizontalAlignment="Left" Margin="20,126,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
+        <GroupBox Header="Вихідні дані" HorizontalAlignment="Left" Height="292" Margin="10,267,0,0" VerticalAlignment="Top" Width="185">
+            <Grid>
+                <TextBox IsReadOnly="True" x:Name="resTB"  HorizontalAlignment="Left" Height="23" Margin="18,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="65"/>
+                <Label Content="Результат:" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top"/>
+                <TextBox IsReadOnly="True" x:Name="cIterTB"  HorizontalAlignment="Left" Height="23" Margin="18,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="65"/>
+                <Label Content="Кількість ітерацій:" HorizontalAlignment="Left" Margin="18,69,0,0" VerticalAlignment="Top"/>
+
+            </Grid>
+        </GroupBox>
+        <Button Content="Знайти" Click="Button_Click" HorizontalAlignment="Left" Margin="120,242,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

@@ -13,6 +13,9 @@ namespace AMO_Lab4
         public SeriesCollection FuncSeriesCollection { get; set; }
         public Func<double, string> YFormatter { get; set; }
         public string[] Labels { get; set; }
+        private double[] iters;
+        private IterationsWindow iterWindow;
+        private double result;
 
         public MainWindow()
         {
@@ -20,17 +23,56 @@ namespace AMO_Lab4
             aTB.Text = "0";
             bTB.Text = "8";
             eTB.Text = "0,00001";
+            itersMI.IsEnabled = false;
+        }
+
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void ExitMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void ItersMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (iterWindow != null && iterWindow.IsActive)
+            {
+                iterWindow.Focus();
+                return;
+            }
+            iterWindow = new IterationsWindow
+            {
+                Iterations = iters,
+                TrueRes = result
+            };
+            iterWindow.Show();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            resTB.Text = "";
+            cIterTB.Text = "";
             double a = 0, b = 6, eps = 0.0001;
             if (!Double.TryParse(aTB.Text, out a) || !Double.TryParse(bTB.Text, out b) || !Double.TryParse(eTB.Text, out eps) || a >= b)
             {
                 MessageBox.Show("Некоректні дані");
                 return;
             }
-            resTB.Text =  MyAlgorithm.Newton(MyAlgorithm.Func, MyAlgorithm.dFunc, MyAlgorithm.ddFunc, a, b, eps).ToString().Substring(0, eTB.Text.Length);
+            result = MyAlgorithm.Newton(MyAlgorithm.Func, MyAlgorithm.dFunc, MyAlgorithm.ddFunc, a, b, eps, out iters);
+            if (Double.IsNaN(result))
+            {
+                MessageBox.Show("Результат не збігається");
+                itersMI.IsEnabled = false;
+                return;
+            }
+            resTB.Text = Math.Round(result, eTB.Text.Length - 2).ToString();
+            cIterTB.Text = iters.Length.ToString();
+            itersMI.IsEnabled = true;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -58,7 +100,8 @@ namespace AMO_Lab4
                 new LineSeries
                 {
                     Title = "Функція",
-                    Values = new ChartValues<double>(Y)
+                    Values = new ChartValues<double>(Y),
+                    PointGeometrySize = 5
                 }
             };
             YFormatter = (x) => Math.Round(x, 4).ToString();
