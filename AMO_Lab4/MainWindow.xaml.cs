@@ -57,7 +57,7 @@ namespace AMO_Lab4
         {
             resTB.Text = "";
             cIterTB.Text = "";
-            double a = 0, b = 6, eps = 0.0001;
+            double a = 0, b = 8, eps = 0.0001;
             if (!Double.TryParse(aTB.Text, out a) || !Double.TryParse(bTB.Text, out b) || !Double.TryParse(eTB.Text, out eps) || a >= b)
             {
                 MessageBox.Show("Некоректні дані");
