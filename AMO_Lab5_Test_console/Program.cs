@@ -11,22 +11,29 @@ namespace AMO_Lab5_Test_console
     {
         static void Main(string[] args)
         {
+            TestSort();
+            Console.ReadKey();
+        }
+        static void TestSort()
+        {
             double[][] A = new double[][]
             {
                 new double[]{0,1,0,1 },
-                new double[]{0,1,1,0 },
-                new double[]{1,0,0,1 },
+                new double[]{1,1,1,0 },
+                new double[]{1,0,1,0 },
                 new double[]{0,1,0,0 },
             };
 
-            MyAlgorithm.SortRows(A, null);
-            for(int i=0;i<A.Length;i++)
+            double[] B = new double[] { 1, 2, 3, 4 };
+
+            MyAlgorithm.SortRows(A, B);
+            for (int i = 0; i < A.Length; i++)
             {
-                for(int j=0;j<A[i].Length;j++)
-                    Console.Write(A[i][j]+ " ");
+                for (int j = 0; j < A[i].Length; j++)
+                    Console.Write(A[i][j] + " ");
+                Console.Write("| " + B[i]);
                 Console.WriteLine();
             }
-            Console.ReadKey();
         }
     }
 }
