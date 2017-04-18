@@ -18,15 +18,15 @@ namespace AMO_Lab5_Test_console
         {
             double[][] A = new double[][]
             {
-                new double[]{0,1,0,1 },
-                new double[]{1,1,1,0 },
-                new double[]{1,0,1,0 },
-                new double[]{0,1,0,0 },
+                new double[]{1,2,3,4 },
+                new double[]{4,1,2,3 },
+                new double[]{5,1,2,5 },
+                new double[]{1,3,3,2 },
             };
 
             double[] B = new double[] { 1, 2, 3, 4 };
 
-            MyAlgorithm.SortRows(A, B);
+            MyAlgorithm.Gauss(A, B);
             for (int i = 0; i < A.Length; i++)
             {
                 for (int j = 0; j < A[i].Length; j++)
