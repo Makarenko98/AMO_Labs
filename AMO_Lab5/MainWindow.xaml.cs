@@ -29,6 +29,29 @@ namespace AMO_Lab5
             LabelsX = new List<Label>();
             AddVariable();
             AddVariable();
+            AddVariable();
+            InitTextBoxesMatrix();
+
+        }
+        private void InitTextBoxesMatrix()
+        {
+            TextBoxesMatrix[0][0].Text = "7,09";
+            TextBoxesMatrix[0][1].Text = "1,17";
+            TextBoxesMatrix[0][2].Text = "-2,23";
+            TextBoxesMatrix[0][3].Text = "-4,75";
+
+            TextBoxesMatrix[1][0].Text = "0,43";
+            TextBoxesMatrix[1][1].Text = "1,4";
+            TextBoxesMatrix[1][2].Text = "-0,62";
+            TextBoxesMatrix[1][3].Text = "-1,05";
+
+            TextBoxesMatrix[2][0].Text = "3,21";
+            TextBoxesMatrix[2][1].Text = "-4,25";
+            TextBoxesMatrix[2][2].Text = "2,13";
+            TextBoxesMatrix[2][3].Text = "-5,06";
+            //7,09  1,17    2,23    4,75
+            //0,43  1,40    0,62    - 1,05
+            //3,21  4,25    2,13    - 5,06
         }
 
         private void AddVarButton_Click(object sender, RoutedEventArgs e)
