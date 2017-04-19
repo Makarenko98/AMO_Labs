@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <GroupBox Padding="10,10,10,10" Header="Система" HorizontalAlignment="Left" Height="215" Margin="67,60,0,0" VerticalAlignment="Top" Width="389">
+            <Grid Name="MatrixGrid">
+
+            </Grid>
+        </GroupBox>
+
     </Grid>
 </Window>
