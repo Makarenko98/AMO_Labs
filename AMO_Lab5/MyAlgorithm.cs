@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace AMO_Lab5
 {
@@ -15,6 +14,7 @@ namespace AMO_Lab5
                 for (int i = k + 1; i < n; i++)
                 {
                     SortRows(A, B);
+
                     M = A[i][k] / A[k][k];
                     for (int j = k; j < n; j++)
                         //обичслення A[i][j]
@@ -46,7 +46,7 @@ namespace AMO_Lab5
                 if (A[i][i] == 0)
                 {
                     for (int j = 0; j < A.Length; j++)
-                        if (A[j][i] != 0)
+                        if (A[j][i] != 0 && !(A[i][j] == 0 && j < i))
                         {
                             temp = A[i];
                             A[i] = A[j];
@@ -54,6 +54,7 @@ namespace AMO_Lab5
                             temp1 = B[i];
                             B[i] = B[j];
                             B[j] = temp1;
+                            break;
                         }
                     if (A[i][i] == 0)
                         throw new ArgumentException("Некоректна матриця");
