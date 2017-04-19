@@ -29,10 +29,13 @@ namespace AMO_Lab5
             LabelsX = new List<List<Label>>();
             AddVariable();
             AddVariable();
-            AddVariable();
+        }
+
+        private void AddVarButton_Click(object sender, RoutedEventArgs e)
+        {
             AddVariable();
         }
-        //size
+
         public void AddVariable()
         {
             int tbWidth = 40,
@@ -80,6 +83,9 @@ namespace AMO_Lab5
                 for (int j = 0; j < TextBoxesMatrix[i].Count; j++)
                     TextBoxesMatrix[i][j].TabIndex = i * TextBoxesMatrix[i].Count + j;
 
+            MatrixGrB.Height = (TextBoxesMatrix.Count + 1) * ((int)(tbHeight * 1.5)) + 10;
+            MatrixGrB.Width = (TextBoxesMatrix[0].Count + 1) * tbWidth + LabelsX[0].Count * lWidtdh + 10;
+
         }
 
         public TextBox CreateTextBox(int Width, int Height, int MarginLeft, int MarginTop)
@@ -107,5 +113,6 @@ namespace AMO_Lab5
             };
             return label;
         }
+
     }
 }

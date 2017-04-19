@@ -10,7 +10,7 @@ namespace AMO_Lab5
             int n = A.Length;
             double M;
             double[] result = new double[B.Length];
-            for (int k = 0; k < n - 1; k++) //n-1???
+            for (int k = 0; k < n - 1; k++)
             {
                 for (int i = k + 1; i < n; i++)
                 {
@@ -22,6 +22,16 @@ namespace AMO_Lab5
                     //обчислення B[i]
                     B[i] = B[i] - M * B[k];
                 }
+            }
+
+            result[B.Length - 1] = B[B.Length - 1] / A[B.Length - 1][B.Length - 1];
+            double s = 0;
+            for (int i = B.Length - 2; i >= 0; i--)
+            {
+                s = 0;
+                for (int j = i + 1; j < B.Length; j++)
+                    s += A[i][j] * result[j];
+                result[i] = (B[i] - s) / A[i][i];
             }
 
             return result;

@@ -26,12 +26,12 @@ namespace AMO_Lab5_Test_console
 
             double[] B = new double[] { 1, 2, 3, 4 };
 
-            MyAlgorithm.Gauss(A, B);
+            double[] result = MyAlgorithm.Gauss(A, B);
             for (int i = 0; i < A.Length; i++)
             {
                 for (int j = 0; j < A[i].Length; j++)
                     Console.Write(A[i][j] + " ");
-                Console.Write("| " + B[i]);
+                Console.Write("| " + B[i] + " | " + result[i]);
                 Console.WriteLine();
             }
         }
